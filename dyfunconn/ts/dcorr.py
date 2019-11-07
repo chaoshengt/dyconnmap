@@ -6,11 +6,13 @@ Snippet adapted from: https://gist.github.com/Satra/aa3d19a12b74e9ab7941
 
 
 """
+
+from typing import Optional
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
 
 
-def dcorr(x, y):
+def dcorr(x: np.ndarray, y: np.ndarray) -> Optional[float]:
     """ Distance Correlation
 
 

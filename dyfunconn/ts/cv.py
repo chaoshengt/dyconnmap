@@ -4,10 +4,11 @@
 """
 # Author: Avraam Marimpis <avraam.marimpis@gmail.com>
 
+import typing
 import numpy as np
 
 
-def cv(X):
+def cv(X: np.ndarray) -> float:
     """
 
 

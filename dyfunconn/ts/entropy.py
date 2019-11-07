@@ -6,7 +6,8 @@
 
 import numpy as np
 
-def entropy(dts):
+
+def entropy(dts: np.ndarray) -> float:
     """ Entropy
 
     """

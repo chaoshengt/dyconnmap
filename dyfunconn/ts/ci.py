@@ -22,7 +22,9 @@ from typing import List
 import numpy as np
 
 
-def complexity_index(x, sub_len=-1, normalize=False, iterations=100) -> List[float]:
+def complexity_index(
+    x: np.ndarray, sub_len: int = -1, normalize: bool = False, iterations: int = 100
+) -> List[float]:
     """ Complexity Index
 
 
@@ -54,16 +56,16 @@ def complexity_index(x, sub_len=-1, normalize=False, iterations=100) -> List[flo
         A list of the number of distinct subwords of length 1, up to the size
         of the input symbolic time series.
     """
-    x = np.int32(x)
-    x = x.flatten()
+    ts = np.int32(x)
+    ts = ts.flatten()
     len_x = len(x)
 
-    ci, spectrum = __compute_complexity_index(x, sub_len)
+    ci, spectrum = __compute_complexity_index(ts, sub_len)
 
     if normalize:
         rng = np.random.RandomState(0)
 
-        mean_ci = 0.0
+        mean_ci = 0.0  # type: float
         num_letters = spectrum[0]
 
         for _ in range(iterations):
@@ -73,10 +75,10 @@ def complexity_index(x, sub_len=-1, normalize=False, iterations=100) -> List[flo
 
         normal_ci = ci / mean_ci
 
-        return normal_ci, ci, spectrum
+        return [normal_ci, ci, spectrum]
 
     else:
-        return ci, spectrum
+        return [ci, spectrum]
 
 
 def __compute_complexity_index(x, sub_len=-1):

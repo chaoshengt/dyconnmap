@@ -26,10 +26,11 @@ consult the work of Bradley and Kantz (Bradley2015_).
 """
 # Author: Avraam Marimpis <avraam.marimpis@gmail.com>
 
+from typing import Optional
 import numpy as np
 
 
-def embed_delay(ts, dim, tau):
+def embed_delay(ts: np.ndarray, dim: int, tau: int) -> Optional[np.ndarray]:
     """ Embed delay
 
 
