@@ -12,7 +12,11 @@ The following software is required for `dyfunconn` to work properly:
 
     This is required for executing the tests.
 
-7. Sphinx (optional)
+7. mypy (optional)
+
+    Required for static type testing.
+
+8. Sphinx (optional)
 
     This is required for building the documentation from the source code.
 
@@ -37,7 +41,7 @@ If you prefer to install `dyfunconn` locally, instead run:
 
 If you opt for the later option, you will have to set the environmental
 variable $PYTHONPATH from the terminal as follows:
-> export PYTHONPATH="$HOME/.local/dyunconn/lib/python2.7/site-packages/"
+> export PYTHONPATH="$HOME/.local/dyunconn/lib/python3.6/site-packages/"
 
 
 Documentation
@@ -54,3 +58,10 @@ Testing
 
 Once you have installed `dyfunconn`, navigate into the `tests` directory and run:
 > nosetests -svd .
+
+
+Static Type Testing
+===================
+
+Navigate to the `dyfunconn` directory and run:
+> mypy -p dyfunconn --ignore-missing-imports
