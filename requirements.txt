@@ -3,6 +3,8 @@ python-coveralls
 codacy-coverage
 coverage
 codecov
+mypy==0.740
+mypy-extension==0.4.1
 
 numpy==1.13.1
 scipy==0.19.1
